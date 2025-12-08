@@ -1,19 +1,27 @@
-# Define individual grocery items as lists containing details
-meat = ["Ham", 3.99, 50, "Sliced"] # Item name, price, quantity, type
-cheese = ["Cheddar", 5.49, 100, "Sharp"]   # Item name, price, quantity, type
-condiment = ["Mustard", 1.99, 75, "Spicy"] # Item name, price, quantity, type
+# Step 1: Initialize Lists
+meat = ["Ham", 3.99, 50, "Sliced"]
+cheese = ["Cheddar", 5.49, 100, "Sharp"]
+condiment = ["Mustard", 1.99, 75, "Spicy"]
 
-# Create the main grocery list that contains these items
+# Step 2: Create Main List
 deli_dept = [meat, cheese, condiment]
-print("Grocery List:" , grocery_list)
 
-# Restock Item
-If Ham in meat and quantity 
+# Output initial state
+print(f"Initial Deli List: {deli_dept}")
 
+# Step 3: Restock Item
+if meat[0] == "Ham" and meat[2] < 100:
+    meat[2] = 100
 
+# Step 4: Add Seasonal Meat
+seasonal_meat = ["Turkey", 4.50, 100, "Sliced"]
+deli_dept.append(seasonal_meat)
 
+# Step 5: Remove Condiment
+deli_dept.remove(condiment)
 
-print("Item:", grocery_list[2][0]) # Accesses "Milk" title
-print("Price:", grocery_list[2][1]) # Accesses price of a Milk, which is 5.99
-print("Quantity:", grocery_list[2][2]) # Accesses quantity of Milk, which is 2
-print("Type:", grocery_list[2][3]) # Accesses type of Milk, which is "2% Milk"
+# Step 6: Sort List Alphabetically by First Element
+deli_dept.sort(key=lambda x: x[0])
+
+# Output updated state
+print(f"Updated Deli List: {deli_dept}")
